@@ -301,6 +301,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         lblFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundoPadrao.jpg"))); // NOI18N
         lblFundo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lblFundo.setMaximumSize(new java.awt.Dimension(1920, 1080));
+        lblFundo.setMinimumSize(new java.awt.Dimension(1920, 1080));
 
         telaFundo.setLayer(lblFundo, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -308,11 +310,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         telaFundo.setLayout(telaFundoLayout);
         telaFundoLayout.setHorizontalGroup(
             telaFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblFundo, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(lblFundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         telaFundoLayout.setVerticalGroup(
             telaFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblFundo, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(lblFundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadastro.png"))); // NOI18N
@@ -363,6 +365,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuCadFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_salvar.png"))); // NOI18N
         menuCadFuncionarios.setText("Cadastrar");
         menuCadFuncionarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuCadFuncionarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCadFuncionariosActionPerformed(evt);
+            }
+        });
         jMenu8.add(menuCadFuncionarios);
 
         menuConFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_buscar.png"))); // NOI18N
@@ -670,7 +677,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
                     .addComponent(telaFundo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -699,17 +706,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void btnLogoffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoffActionPerformed
         // TODO add your handling code here:
-        teste tela = new teste();
-        telaFundo.add(tela);
-        tela.setVisible(true);
     }//GEN-LAST:event_btnLogoffActionPerformed
 
     private void menuSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSairMouseClicked
         // TODO add your handling code here:
-        teste2 tela = new teste2();
+    }//GEN-LAST:event_menuSairMouseClicked
+
+    private void menuCadFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadFuncionariosActionPerformed
+        // TODO add your handling code here:
+        TelaCadFuncionario tela = new TelaCadFuncionario();
         telaFundo.add(tela);
         tela.setVisible(true);
-    }//GEN-LAST:event_menuSairMouseClicked
+    }//GEN-LAST:event_menuCadFuncionariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -736,6 +744,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
